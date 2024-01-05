@@ -1,0 +1,53 @@
+### Recuperar todas las películas
+GET http://localhost:3000/movies
+
+### Recuperar una película por id
+GET http://localhost:3000/movies/9e6106f0-848b-4810-a11a-3d832a5610f9
+
+### Recuperar todas las películas de un género - Usando query params  
+GET http://localhost:3000/movies?genre=ACTION
+
+### Crear pelicula 
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "sql": "SELECT * FROM users",
+    "title": "The Godfather",
+    "year": 1972,
+    "duration": 175,
+    "director": "Francis Ford Coppola",
+    "poster": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+    "genre": [
+      "Drama",
+      "Crime",
+      "Romance"
+    ],
+    "rate": 9.2
+}
+
+### Crear pelicula Madagascar 2
+POST  http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "title": "Madagascar: Escape 2 Africa",
+    "sql": "SELECT * FROM users", 
+    "year": 2008,
+    "director": "Eric Darnell",
+    "duration": 89, 
+    "poster": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSC-6OYIbaV5TjBakg8u0mBxayr91byJrt246W6Z5Z2C5r6cZXS",
+    "genre": [ "Crime" ]
+}
+
+### Actualizar pelicula
+PATCH http://localhost:3000/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+  "id": "hola",
+  "title": "The Shawshank Redemption 2",
+  "genre": [ "Romance", "Drama", "Crime", "Family" ]
+}
+
+
